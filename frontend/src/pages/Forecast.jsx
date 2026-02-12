@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getProducts, forecastDemand } from '../api/api';
+import { MdTrendingUp, MdInventory, MdLightbulb, MdBarChart } from 'react-icons/md';
+import { BiLoaderAlt } from 'react-icons/bi';
 import './Forecast.css';
 
 function Forecast() {
@@ -52,14 +54,14 @@ function Forecast() {
   return (
     <div className="forecast-container">
       <div className="forecast-header">
-        <h1>🔮 Demand Forecast</h1>
+        <h1>Demand Forecast</h1>
         <p>AI-powered demand predictions using machine learning algorithms</p>
       </div>
 
       <div className="forecast-content">
         <form onSubmit={handleForecast} className="forecast-form">
           <div className="form-group">
-            <label htmlFor="product-select">📦 Select Product</label>
+            <label htmlFor="product-select"><MdInventory className="label-icon" /> Select Product</label>
             <select
               id="product-select"
               value={selectedProductId}
@@ -81,12 +83,12 @@ function Forecast() {
           >
             {loading ? (
               <>
-                <span className="button-spinner"></span>
+                <BiLoaderAlt className="button-spinner" />
                 Forecasting...
               </>
             ) : (
               <>
-                <span className="button-icon">🚀</span>
+                <MdTrendingUp className="button-icon" />
                 Generate Forecast
               </>
             )}
@@ -116,7 +118,7 @@ function Forecast() {
 
               <div className="result-footer">
                 <p className="result-note">
-                  💡 This forecast is generated using machine learning algorithms based on historical data patterns
+                  <MdLightbulb className="note-icon" /> This forecast is generated using machine learning algorithms based on historical data patterns
                 </p>
               </div>
             </div>
@@ -125,7 +127,7 @@ function Forecast() {
 
         {!forecastResult && !error && (
           <div className="placeholder">
-            <div className="placeholder-icon">📊</div>
+            <MdBarChart className="placeholder-icon" />
             <p>Select a product and click "Generate Forecast" to see AI-powered demand predictions</p>
           </div>
         )}

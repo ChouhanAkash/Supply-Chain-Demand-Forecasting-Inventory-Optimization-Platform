@@ -55,20 +55,8 @@ function Home() {
         <div className="features-grid">
           <div className="feature-card">
             <div className="feature-icon">📊</div>
-            <h3>Real-Time Analytics</h3>
+            <h3>Dashboard Analytics</h3>
             <p>Monitor your supply chain performance with live dashboards and comprehensive metrics.</p>
-          </div>
-
-          <div className="feature-card">
-            <div className="feature-icon">🎯</div>
-            <h3>Demand Forecasting</h3>
-            <p>Leverage RandomForest ML models to predict demand with high accuracy and confidence.</p>
-          </div>
-
-          <div className="feature-card">
-            <div className="feature-icon">🔧</div>
-            <h3>Inventory Optimization</h3>
-            <p>Use PuLP linear programming to minimize costs while meeting all demand constraints.</p>
           </div>
 
           <div className="feature-card">
@@ -84,39 +72,15 @@ function Home() {
           </div>
 
           <div className="feature-card">
-            <div className="feature-icon">🚀</div>
-            <h3>API Integration</h3>
-            <p>RESTful API built with FastAPI for seamless integration with existing systems.</p>
+            <div className="feature-icon">🎯</div>
+            <h3>Demand Forecasting</h3>
+            <p>Predict future demand using machine learning algorithms for better planning.</p>
           </div>
-        </div>
-      </section>
 
-      <section className="tech-section">
-        <h2 className="section-title">Technology Stack</h2>
-        <div className="tech-grid">
-          <div className="tech-item">
-            <span className="tech-badge">Backend</span>
-            <span>FastAPI + Python</span>
-          </div>
-          <div className="tech-item">
-            <span className="tech-badge">Frontend</span>
-            <span>React + Vite</span>
-          </div>
-          <div className="tech-item">
-            <span className="tech-badge">ML</span>
-            <span>Scikit-learn</span>
-          </div>
-          <div className="tech-item">
-            <span className="tech-badge">Optimization</span>
-            <span>PuLP Solver</span>
-          </div>
-          <div className="tech-item">
-            <span className="tech-badge">Database</span>
-            <span>SQLAlchemy + SQLite</span>
-          </div>
-          <div className="tech-item">
-            <span className="tech-badge">API</span>
-            <span>Axios + REST</span>
+          <div className="feature-card">
+            <div className="feature-icon">🔧</div>
+            <h3>Inventory Optimization</h3>
+            <p>Optimize inventory allocation across warehouses to minimize costs effectively.</p>
           </div>
         </div>
       </section>

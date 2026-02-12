@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { optimizeInventory } from '../api/api';
+import { MdSettings, MdWarehouse, MdInventory, MdBarChart, MdLightbulb, MdCheckCircle } from 'react-icons/md';
+import { BiLoaderAlt } from 'react-icons/bi';
 import './Optimization.css';
 
 function Optimization() {
@@ -24,7 +26,7 @@ function Optimization() {
   return (
     <div className="optimization-container">
       <div className="optimization-header">
-        <h1>⚡ Inventory Optimization</h1>
+        <h1>Inventory Optimization</h1>
         <p>Optimize inventory allocation using linear programming algorithms</p>
       </div>
 
@@ -37,12 +39,12 @@ function Optimization() {
           >
             {loading ? (
               <>
-                <span className="button-spinner"></span>
+                <BiLoaderAlt className="button-spinner" />
                 Optimizing...
               </>
             ) : (
               <>
-                <span className="button-icon">⚡</span>
+                <MdSettings className="button-icon" />
                 Run Optimization
               </>
             )}
@@ -77,7 +79,7 @@ function Optimization() {
                   
                   <div className="allocation-details">
                     <div className="detail-row">
-                      <span className="detail-icon">🏢</span>
+                      <MdWarehouse className="detail-icon" />
                       <div className="detail-content">
                         <span className="detail-label">Warehouse</span>
                         <span className="detail-value">ID: {allocation.warehouse_id}</span>
@@ -85,7 +87,7 @@ function Optimization() {
                     </div>
 
                     <div className="detail-row">
-                      <span className="detail-icon">📦</span>
+                      <MdInventory className="detail-icon" />
                       <div className="detail-content">
                         <span className="detail-label">Product</span>
                         <span className="detail-value">ID: {allocation.product_id}</span>
@@ -93,7 +95,7 @@ function Optimization() {
                     </div>
 
                     <div className="detail-row highlight">
-                      <span className="detail-icon">📊</span>
+                      <MdBarChart className="detail-icon" />
                       <div className="detail-content">
                         <span className="detail-label">Allocated Quantity</span>
                         <span className="detail-value quantity">{allocation.allocated_quantity} units</span>
@@ -105,7 +107,7 @@ function Optimization() {
             </div>
 
             <div className="optimization-info">
-              <h3>💡 Optimization Details</h3>
+              <h3><MdLightbulb className="info-icon" /> Optimization Details</h3>
               <ul>
                 <li><strong>Algorithm:</strong> Linear Programming (PuLP solver)</li>
                 <li><strong>Objective:</strong> Minimize total storage costs</li>
@@ -118,20 +120,20 @@ function Optimization() {
 
         {!optimizationResult && !error && (
           <div className="placeholder">
-            <div className="placeholder-icon">⚙️</div>
+            <MdSettings className="placeholder-icon" />
             <h3>Ready to Optimize</h3>
             <p>Click "Run Optimization" to calculate the optimal inventory allocation across your warehouses</p>
             <div className="features-list">
               <div className="feature-item">
-                <span className="feature-icon">✓</span>
+                <MdCheckCircle className="feature-icon" />
                 <span>Minimizes storage costs</span>
               </div>
               <div className="feature-item">
-                <span className="feature-icon">✓</span>
+                <MdCheckCircle className="feature-icon" />
                 <span>Meets demand requirements</span>
               </div>
               <div className="feature-item">
-                <span className="feature-icon">✓</span>
+                <MdCheckCircle className="feature-icon" />
                 <span>Respects capacity limits</span>
               </div>
             </div>
