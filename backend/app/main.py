@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.database import Base, engine
 from app.models import product, warehouse
-from app.routes import product_routes, warehouse_routes, forecast_routes
+from app.routes import product_routes, warehouse_routes, forecast_routes, optimization_routes
 
 app = FastAPI()
 
@@ -23,6 +23,7 @@ Base.metadata.create_all(bind=engine)
 app.include_router(product_routes.router)
 app.include_router(warehouse_routes.router)
 app.include_router(forecast_routes.router)
+app.include_router(optimization_routes.router)
 
 
 @app.get("/health")
