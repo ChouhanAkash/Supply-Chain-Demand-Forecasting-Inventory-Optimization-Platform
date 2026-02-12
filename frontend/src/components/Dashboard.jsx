@@ -94,10 +94,7 @@ function Dashboard() {
           </div>
           <div className="stat-box">
             <span className="stat-icon">⚡</span>
-           div className="section-header">
-            <h2>🏢 Warehouses</h2>
-            <span className="badge">{warehouses.length} locations</span>
-          </divstat-info">
+            <div className="stat-info">
               <h3>{optimizationResult ? optimizationResult.total_allocations : '0'}</h3>
               <p>Allocations</p>
             </div>
@@ -132,7 +129,10 @@ function Dashboard() {
 
         {/* Warehouses Section */}
         <section className="dashboard-section">
-          <h2>Warehouses</h2>
+          <div className="section-header">
+            <h2>🏢 Warehouses</h2>
+            <span className="badge">{warehouses.length} locations</span>
+          </div>
           <div className="warehouses-grid">
             {warehouses.length > 0 ? (
               warehouses.map((warehouse) => (
@@ -150,7 +150,10 @@ function Dashboard() {
           </div>
         </section>
 
-        {/* Fore🔮 Demand Forecast Result</h2>
+        {/* Forecast Result */}
+        {forecastResult && (
+          <section className="dashboard-section result-section">
+            <h2>🔮 Demand Forecast Result</h2>
             <div className="result-card">
               <div className="result-item">
                 <span className="result-label">Product ID</span>
@@ -168,10 +171,7 @@ function Dashboard() {
         <section className="dashboard-section">
           <h2>⚡ Inventory Optimization</h2>
           <button onClick={handleOptimize} className="btn-optimize">
-            <span>🚀</span
-        <section className="dashboard-section">
-          <h2>Inventory Optimization</h2>
-          <button onClick={handleOptimize} className="btn-optimize">
+            <span>🚀</span>
             Optimize Inventory Allocation
           </button>
           
