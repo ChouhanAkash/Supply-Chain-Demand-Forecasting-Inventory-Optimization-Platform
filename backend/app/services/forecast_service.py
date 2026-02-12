@@ -1,7 +1,9 @@
+from app.ml.predict import predict_demand
+
+
 def forecast_demand(product_id: int) -> int:
     """
-    Forecast demand for a product.
-    Currently returns dummy value.
+    Forecast demand for a product using ML model.
     
     Args:
         product_id: The ID of the product to forecast
@@ -9,5 +11,5 @@ def forecast_demand(product_id: int) -> int:
     Returns:
         Forecasted demand quantity
     """
-    # TODO: Implement actual forecasting logic
-    return 100
+    prediction = predict_demand(product_id)
+    return int(prediction)
