@@ -1,0 +1,204 @@
+.dashboard {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dashboard-header p {
+  font-size: 1.1rem;
+  color: #888;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #667eea;
+}
+
+.error-message {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dashboard-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #667eea;
+}
+
+.products-grid,
+.warehouses-grid,
+.allocations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card,
+.warehouse-card,
+.allocation-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover,
+.warehouse-card:hover,
+.allocation-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(102, 126, 234, 0.5);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card h3,
+.warehouse-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: #fff;
+}
+
+.product-card .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.warehouse-details p {
+  margin: 0.5rem 0;
+  color: #aaa;
+}
+
+.warehouse-details strong {
+  color: #fff;
+}
+
+.btn-forecast,
+.btn-optimize {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-weight: 500;
+}
+
+.btn-forecast:hover,
+.btn-optimize:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-optimize {
+  max-width: 300px;
+  margin-bottom: 1.5rem;
+}
+
+.empty-message {
+  color: #888;
+  font-style: italic;
+  padding: 2rem;
+  text-align: center;
+}
+
+.result-section {
+  background: rgba(102, 126, 234, 0.1);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.result-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.result-card p {
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
+  color: #aaa;
+}
+
+.result-card strong {
+  color: #fff;
+}
+
+.optimization-results {
+  margin-top: 2rem;
+}
+
+.optimization-results h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.optimization-results > p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #aaa;
+}
+
+.allocation-card p {
+  margin: 0.5rem 0;
+  color: #aaa;
+}
+
+.allocation-card strong {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .products-grid,
+  .warehouses-grid,
+  .allocations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header h1 {
+    font-size: 2rem;
+  }
+
+  .btn-optimize {
+    max-width: 100%;
+  }
+}
