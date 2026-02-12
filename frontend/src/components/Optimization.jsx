@@ -24,8 +24,8 @@ function Optimization() {
   return (
     <div className="optimization-container">
       <div className="optimization-header">
-        <h1>Inventory Optimization</h1>
-        <p>Optimize inventory allocation across warehouses using linear programming</p>
+        <h1>⚡ Inventory Optimization</h1>
+        <p>Optimize inventory allocation using linear programming algorithms</p>
       </div>
 
       <div className="optimization-content">
@@ -37,7 +37,7 @@ function Optimization() {
           >
             {loading ? (
               <>
-                <span className="spinner"></span>
+                <span className="button-spinner"></span>
                 Optimizing...
               </>
             ) : (

@@ -52,14 +52,14 @@ function Forecast() {
   return (
     <div className="forecast-container">
       <div className="forecast-header">
-        <h1>Demand Forecast</h1>
-        <p>AI-powered demand predictions for your products</p>
+        <h1>🔮 Demand Forecast</h1>
+        <p>AI-powered demand predictions using machine learning algorithms</p>
       </div>
 
       <div className="forecast-content">
         <form onSubmit={handleForecast} className="forecast-form">
           <div className="form-group">
-            <label htmlFor="product-select">Select Product</label>
+            <label htmlFor="product-select">📦 Select Product</label>
             <select
               id="product-select"
               value={selectedProductId}
@@ -79,7 +79,17 @@ function Forecast() {
             className="forecast-button"
             disabled={loading || !selectedProductId}
           >
-            {loading ? 'Forecasting...' : 'Generate Forecast'}
+            {loading ? (
+              <>
+                <span className="button-spinner"></span>
+                Forecasting...
+              </>
+            ) : (
+              <>
+                <span className="button-icon">🚀</span>
+                Generate Forecast
+              </>
+            )}
           </button>
         </form>
 

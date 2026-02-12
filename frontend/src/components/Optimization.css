@@ -1,5 +1,5 @@
 .optimization-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -7,19 +7,17 @@
 .optimization-header {
   text-align: center;
   margin-bottom: 3rem;
+  padding: 2rem 0;
 }
 
 .optimization-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 2.8rem;
+  margin-bottom: 0.8rem;
+  color: #fff;
 }
 
 .optimization-header p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #888;
 }
 
@@ -65,7 +63,7 @@
   font-size: 1.5rem;
 }
 
-.spinner {
+.button-spinner {
   width: 20px;
   height: 20px;
   border: 3px solid rgba(255, 255, 255, 0.3);
