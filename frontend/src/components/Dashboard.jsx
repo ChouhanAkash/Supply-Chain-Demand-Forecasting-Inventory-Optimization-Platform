@@ -51,22 +51,65 @@ function Dashboard() {
   };
 
   if (loading) {
-    return <div className="loading">Loading dashboard data...</div>;
+    return (
+      <div className="loading-container">
+        <div className="spinner"></div>
+        <p>Loading dashboard data...</p>
+      </div>
+    );
   }
 
   return (
     <div className="dashboard">
       <header className="dashboard-header">
-        <h1>Supply Chain Dashboard</h1>
-        <p>Demand Forecasting & Inventory Optimization Platform</p>
+        <h1>📊 Supply Chain Dashboard</h1>
+        <p>Real-time monitoring and analytics for your supply chain operations</p>
       </header>
 
       {error && <div className="error-message">{error}</div>}
 
       <div className="dashboard-content">
+        {/* Stats Overview */}
+        <section className="stats-overview">
+          <div className="stat-box">
+            <span className="stat-icon">📦</span>
+            <div className="stat-info">
+              <h3>{products.length}</h3>
+              <p>Total Products</p>
+            </div>
+          </div>
+          <div className="stat-box">
+            <span className="stat-icon">🏢</span>
+            <div className="stat-info">
+              <h3>{warehouses.length}</h3>
+              <p>Warehouses</p>
+            </div>
+          </div>
+          <div className="stat-box">
+            <span className="stat-icon">🎯</span>
+            <div className="stat-info">
+              <h3>{forecastResult ? '1' : '0'}</h3>
+              <p>Active Forecasts</p>
+            </div>
+          </div>
+          <div className="stat-box">
+            <span className="stat-icon">⚡</span>
+           div className="section-header">
+            <h2>🏢 Warehouses</h2>
+            <span className="badge">{warehouses.length} locations</span>
+          </divstat-info">
+              <h3>{optimizationResult ? optimizationResult.total_allocations : '0'}</h3>
+              <p>Allocations</p>
+            </div>
+          </div>
+        </section>
+
         {/* Products Section */}
         <section className="dashboard-section">
-          <h2>Products</h2>
+          <div className="section-header">
+            <h2>📦 Products</h2>
+            <span className="badge">{products.length} items</span>
+          </div>
           <div className="products-grid">
             {products.length > 0 ? (
               products.map((product) => (
@@ -107,18 +150,25 @@ function Dashboard() {
           </div>
         </section>
 
-        {/* Forecast Result */}
-        {forecastResult && (
-          <section className="dashboard-section result-section">
-            <h2>Demand Forecast Result</h2>
+        {/* Fore🔮 Demand Forecast Result</h2>
             <div className="result-card">
-              <p><strong>Product ID:</strong> {forecastResult.product_id}</p>
-              <p><strong>Forecasted Demand:</strong> {forecastResult.forecasted_demand} units</p>
+              <div className="result-item">
+                <span className="result-label">Product ID</span>
+                <span className="result-value">{forecastResult.product_id}</span>
+              </div>
+              <div className="result-item">
+                <span className="result-label">Forecasted Demand</span>
+                <span className="result-value highlight">{forecastResult.forecasted_demand} units</span>
+              </div>
             </div>
           </section>
         )}
 
         {/* Optimization Section */}
+        <section className="dashboard-section">
+          <h2>⚡ Inventory Optimization</h2>
+          <button onClick={handleOptimize} className="btn-optimize">
+            <span>🚀</span
         <section className="dashboard-section">
           <h2>Inventory Optimization</h2>
           <button onClick={handleOptimize} className="btn-optimize">
