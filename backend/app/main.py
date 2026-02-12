@@ -26,6 +26,23 @@ app.include_router(forecast_routes.router)
 app.include_router(optimization_routes.router)
 
 
+@app.get("/")
+async def root():
+    """Root endpoint with API information"""
+    return {
+        "message": "Supply Chain Management API",
+        "version": "1.0.0",
+        "docs": "/docs",
+        "health": "/health",
+        "endpoints": {
+            "products": "/products/",
+            "warehouses": "/warehouses/",
+            "forecast": "/forecast-demand/",
+            "optimize": "/optimize-inventory/"
+        }
+    }
+
+
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""
