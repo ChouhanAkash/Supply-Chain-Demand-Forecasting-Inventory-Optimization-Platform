@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.database import Base, engine
 from app.models import product, warehouse
-from app.routes import product_routes, warehouse_routes, forecast_routes, optimization_routes
+from app.routes import product_routes, warehouse_routes, forecast_routes, optimization_routes, admin_routes
 from app.seed_data import seed_database
 
 app = FastAPI()
@@ -31,6 +31,7 @@ app.include_router(product_routes.router)
 app.include_router(warehouse_routes.router)
 app.include_router(forecast_routes.router)
 app.include_router(optimization_routes.router)
+app.include_router(admin_routes.router)
 
 
 @app.get("/")
