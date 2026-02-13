@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.database import Base, engine
 from app.models import product, warehouse
 from app.routes import product_routes, warehouse_routes, forecast_routes, optimization_routes
+from app.seed_data import seed_database
 
 app = FastAPI()
 
@@ -18,6 +19,12 @@ app.add_middleware(
 
 # Create database tables on startup
 Base.metadata.create_all(bind=engine)
+
+# Seed database with initial data
+@app.on_event("startup")
+async def startup_event():
+    """Initialize database with dummy data on startup"""
+    seed_database()
 
 # Include routers
 app.include_router(product_routes.router)
