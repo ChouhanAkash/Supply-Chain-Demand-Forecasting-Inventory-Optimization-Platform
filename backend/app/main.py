@@ -8,13 +8,22 @@ from app.seed_data import seed_database
 
 app = FastAPI()
 
-# Enable CORS for all origins
+# Enable CORS - Allow frontend access from Netlify and local development
+origins = [
+    "https://calm-horse-776eef.netlify.app",
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:5173",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
+    expose_headers=["*"],
 )
 
 # Create database tables on startup
