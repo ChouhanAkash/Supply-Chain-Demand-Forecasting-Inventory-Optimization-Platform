@@ -188,7 +188,53 @@ Open your browser and navigate to `http://localhost:3001`
 3. View optimal allocation across warehouses
 4. See minimized storage costs
 
-## 📖 API Documentation
+## � Deployment
+
+### Backend Deployment (Render) ✅
+
+The backend is deployed and live at:
+```
+https://supply-chain-demand-forecasting.onrender.com
+```
+
+**Status:** All API endpoints are working successfully
+- ✅ Products API (GET, POST)
+- ✅ Warehouses API (GET, POST)
+- ✅ Forecast Demand API
+- ✅ Inventory Optimization API
+
+See [RENDER_DEPLOYMENT.md](RENDER_DEPLOYMENT.md) for backend deployment details.
+
+### Frontend Deployment (Netlify) ✅
+
+The frontend is deployed and live at:
+```
+https://calm-horse-776eef.netlify.app
+```
+
+**Features Available:**
+- ✅ Products Management
+- ✅ Warehouses Management  
+- ✅ AI-Powered Demand Forecasting
+- ✅ Inventory Optimization
+- ✅ Real-time Dashboard
+
+### Live Demo
+
+🌐 **Visit the Live Application:**
+- **Frontend**: https://calm-horse-776eef.netlify.app
+- **Backend API**: https://supply-chain-demand-forecasting.onrender.com
+- **API Docs**: https://supply-chain-demand-forecasting.onrender.com/docs
+
+### Deployment Notes
+
+**Note:** Backend uses Render free tier, which may spin down after inactivity. First request may take 30-60 seconds to wake up the server.
+
+**Detailed Instructions:**
+- Frontend deployment guide: [frontend/DEPLOY_QUICK_START.md](frontend/DEPLOY_QUICK_START.md)
+- Full deployment docs: [frontend/DEPLOYMENT.md](frontend/DEPLOYMENT.md)
+
+## �📖 API Documentation
 
 ### Interactive Docs
 Once the backend is running, visit:
